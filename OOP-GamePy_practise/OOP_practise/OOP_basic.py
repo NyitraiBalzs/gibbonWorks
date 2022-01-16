@@ -27,9 +27,9 @@ class Course:
         return value / len(self.students)
 
 
-s1 = Student('fasz', 18, 5)
-s2 = Student('fos', 28, 4)
-s3 = Student('pina', 38, 3)
+s1 = Student('valami', 18, 5)
+s2 = Student('valaki', 28, 4)
+s3 = Student('bárki', 38, 3)
 
 course = Course('math', 2)
 
