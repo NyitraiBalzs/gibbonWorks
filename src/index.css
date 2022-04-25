@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +12,34 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+#header{
+  text-align: center;
+  height: 5vh;
+}
+
+#header > *{
+  margin: 0;
+}
+
+#chat-window{
+  margin: 0 auto;
+  height: 75vh;
+  width: 75%;
+  border: black solid 1px;
+}
+
+#footer{
+  bottom: 0rem;
+  height: 5vh;
+  width: 100%;
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+#footer > *{
+ margin: 0;
 }
