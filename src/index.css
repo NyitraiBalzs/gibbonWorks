@@ -22,6 +22,13 @@ code {
 
 }
 
+button,
+button:focus{
+  outline: none;
+  border: none;
+  background: rgb(200, 200, 200);
+}
+
 /*HEADER*/
 
 #header{
@@ -29,64 +36,127 @@ code {
   margin: 5rem auto;
 }
 
-#path-1-outside-1_101_7{
-  animation: line-fill 2.5s ease forwards;
-  background-color: black;
+
+#logo >*{
+  stroke-linecap: round;
+  align-self: center;
 }
-#logo path:nth-child(2){
+
+#logo path:nth-child(1){
   stroke-dasharray: 618;
   stroke-dashoffset: 618;
-  animation: line-anim 2.5s ease forwards 0.1s;
+  transition: fill;
+  animation: line-anim 2.5s ease forwards, fill-blue  3.5s ease forwards;
+
  
+}
+
+#logo path:nth-child(2){
+  stroke-dasharray: 439;
+  stroke-dashoffset: 439;
+  animation: line-anim 2.5s ease forwards 0.3s, fill-red  3.5s ease forwards 0.3s ;
+  
 }
 
 #logo path:nth-child(3){
   stroke-dasharray: 439;
   stroke-dashoffset: 439;
-  animation: line-anim 2.5s ease forwards 2s
+  animation: line-anim 2.5s ease forwards 0.6s, fill-yellow  2.5s ease forwards 0.6s;
 }
 
 #logo path:nth-child(4){
-  stroke-dasharray: 439;
-  stroke-dashoffset: 439;
-  animation: line-anim 2.5s ease forwards 0.6s
+  stroke-dasharray: 702;
+  stroke-dashoffset: 702;
+  animation: line-anim 2.5s ease forwards 0.9s, fill-green  3.5s ease forwards 0.9s;
 }
 
 #logo path:nth-child(5){
-  stroke-dasharray: 702;
-  stroke-dashoffset: 702;
-  animation: line-anim 2.5s ease forwards 0.9s
+  stroke-linecap: square;
+  stroke-dasharray: 290;
+  stroke-dashoffset: 290;
+  animation: line-anim 2.5s ease forwards 1.2s, fill-blue  2.5s ease forwards 1.2s;
 }
 
 #logo path:nth-child(6){
-  stroke-dasharray: 290;
-  stroke-dashoffset: 290;
-  animation: line-anim 2.5s ease forwards 1.2s
-}
-
-#logo path:nth-child(7){
   stroke-dasharray: 522;
   stroke-dashoffset: 522;
-  animation: line-anim 2.5s ease forwards 1.5s
+  animation: line-anim 2.5s ease forwards 1.5s, fill-red  3.5s ease forwards 1.5s;
 }
 
 @keyframes line-anim{
   to{
     stroke-dashoffset: 0;
+    fill: currentColor
   }
 }
 
-@keyframes line-fill {
+@keyframes text-transition {
   from{
-    background-color:transparent;
+    color: transparent;
+    font-size: 32px;
   }
   to{
-    background-color: black;
+    color: black;
+    font-size: medium;
   }
 }
+
+@keyframes show {
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes fill-blue{
+  from{
+    fill:transparent
+  }
+  40%{
+    fill: transparent;
+  }
+to{
+  fill: #4285F4;
+}
+}
+@keyframes fill-red{
+  from{
+    fill:transparent
+  }
+  40%{
+    fill: transparent;
+  }
+to{
+  fill:#DB4437;
+}
+}
+@keyframes fill-yellow{
+  from{
+    fill:transparent
+  }
+  40%{
+    fill: transparent;
+  }
+  to{
+    fill:#F4B400;
+  }
+
+}
+@keyframes fill-green{
+  from{
+    fill:transparent
+  }
+  40%{
+    fill: transparent;
+  }
+to{ 
+  fill: #0F9D58;
+}
+}
 #madeBy{
+  color: transparent;
   text-align: center;
-  font-style:oblique;
+  white-space: nowrap;
+  animation: text-transition 2.5s ease forwards 1.5s;
 }
 
 /*SEARCH WINDOW*/ 
@@ -99,8 +169,34 @@ code {
 }
 
 #input-field-container{
+  font-family: Roboto;
   display: flex;
+  opacity: 0;
   justify-content: center;
+  animation: show 1s ease-in forwards 3s;
+}
+
+#input-field-container input,
+#input-field-container input:focus{
+  outline: none;
+  height: 1.75rem;
+  font-size: 1.2rem;
+  width: 200px;
+  border: solid 1px rgb(200, 200, 200);
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#input-field-container button{
+  width: 100px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: 700;
+}
+#input-field-container button:hover{
+  background: #91acff;
+  transition: all 0.3s ease;
 }
 
 
@@ -113,3 +209,4 @@ code {
   color: white;
   text-align: center;
 }
+
