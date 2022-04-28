@@ -1,14 +1,16 @@
 import React from 'react';
 import Header from './componetnts/Header';
 import Footer from './componetnts/Footer';
-import ChatWindow from './componetnts/ChatWindow';
+import Window from './componetnts/Window';
 
 function App() {
-  const user = 'Anutád'
+  const user = 'Nyitrai Én'
+  const pageTitle = 'Bootleg Google'
+
   return (
-      <div className='container'>
-        <Header user={user}/>
-        <ChatWindow/>
+      <div id='container'>
+        <Header pageTitle={pageTitle}/>
+        <Window/>
         <Footer user={user}/>
     </div>
   );
